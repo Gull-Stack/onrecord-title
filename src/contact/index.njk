@@ -23,6 +23,8 @@ description: Get a free quote for your title and escrow needs. Contact OnRecord 
           <div class="fax-field">
             <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
           </div>
+          <!-- Timestamp token (bot detection) -->
+          <input type="hidden" name="_timestamp" id="_timestamp" value="">
           
           <div class="form-row">
             <div class="form-group">
@@ -71,6 +73,7 @@ description: Get a free quote for your title and escrow needs. Contact OnRecord 
           
           <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Request</button>
         </form>
+        <script>document.getElementById('_timestamp').value = Date.now();</script>
       </div>
       
       <div class="contact-info">
