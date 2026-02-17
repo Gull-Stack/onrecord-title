@@ -1,0 +1,17 @@
+{
+  "name": "onrecord-title",
+  "version": "1.0.0",
+  "description": "OnRecord Title - A Modern Spin on Title & Escrow in Utah",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy && npm run minify",
+    "minify": "npm run minify:css && npm run minify:js",
+    "minify:css": "cleancss -o _site/assets/css/styles.min.css _site/assets/css/styles.css || true",
+    "minify:js": "terser _site/assets/js/main.js -o _site/assets/js/main.min.js -c -m || true"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.31.0"
+  }
+}

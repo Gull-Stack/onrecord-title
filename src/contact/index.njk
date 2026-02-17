@@ -1,0 +1,194 @@
+---
+layout: base.njk
+title: Contact Us
+description: Get a free quote for your title and escrow needs. Contact OnRecord Title in Midvale, Utah for residential, commercial, or refinance closings.
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Ready to close? Let's talk about your transaction.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h2>Request a Quote</h2>
+        <p>Fill out the form below and we'll get back to you within one business day.</p>
+        
+        <form action="/api/contact" method="POST">
+          <!-- Honeypot -->
+          <div class="fax-field">
+            <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="transaction">Transaction Type</label>
+            <select id="transaction" name="transaction">
+              <option value="">Select type...</option>
+              <option value="purchase">Purchase</option>
+              <option value="sale">Sale</option>
+              <option value="refinance">Refinance</option>
+              <option value="commercial">Commercial</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="role">I am a...</label>
+            <select id="role" name="role">
+              <option value="">Select role...</option>
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller</option>
+              <option value="agent">Real Estate Agent</option>
+              <option value="lender">Lender</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Tell us about your transaction</label>
+            <textarea id="message" name="message" rows="4" placeholder="Property address, timeline, any special circumstances..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Request</button>
+        </form>
+      </div>
+      
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>📍 Visit Our Office</h3>
+          <p><strong>{{ site.address.street }}</strong><br>{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}</p>
+          <a href="https://maps.google.com/?q={{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }}" target="_blank">Get Directions →</a>
+        </div>
+        
+        <div class="info-card">
+          <h3>📞 Call Us</h3>
+          <p><a href="tel:{{ site.phone }}" class="contact-phone">{{ site.phone }}</a></p>
+          <p class="info-hours">{{ site.hours }}</p>
+        </div>
+        
+        <div class="info-card">
+          <h3>✉️ Email Us</h3>
+          <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+          <p class="info-note">We respond within one business day</p>
+        </div>
+        
+        <div class="info-card">
+          <h3>🚗 Mobile Closings</h3>
+          <p>Can't come to us? We'll come to you. Mobile closings available throughout the Salt Lake Valley.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-3xl);
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+.contact-form {
+  background: var(--white);
+  padding: var(--space-2xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.contact-form h2 { margin-bottom: var(--space-sm); }
+.contact-form > p { color: var(--gray-600); margin-bottom: var(--space-xl); }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+@media (max-width: 500px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-group textarea { resize: vertical; }
+
+.fax-field {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.info-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-lg);
+}
+
+.info-card h3 { margin-bottom: var(--space-md); font-family: var(--font-body); }
+.info-card p { margin-bottom: var(--space-sm); color: var(--gray-600); }
+.info-card a { color: var(--secondary); font-weight: 500; }
+
+.contact-phone {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary) !important;
+}
+
+.info-hours, .info-note {
+  font-size: 0.85rem;
+  color: var(--gray-500) !important;
+}
+</style>

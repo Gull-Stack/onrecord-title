@@ -1,0 +1,187 @@
+---
+layout: base.njk
+title: Title & Escrow Services in Utah | Mobile & Online Closings
+description: OnRecord Title provides expert title insurance and escrow services throughout Utah. Mobile closings, online closings for sellers, and white-glove service from professionals with 25+ years experience.
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Title & Escrow Services in Utah</p>
+      <h1>Close On <span class="highlight">Your Terms</span></h1>
+      <p class="hero-subtitle">Whether you prefer our office, your office, a coffee shop, or your couch — we bring the closing to you. Modern title and escrow services with old-fashioned attention to detail.</p>
+      <div class="hero-cta">
+        <a href="{{ '/contact/' | url }}" class="btn btn-primary btn-lg">Get a Free Quote</a>
+        <a href="tel:{{ site.phone }}" class="btn btn-outline btn-lg">Call {{ site.phone }}</a>
+      </div>
+      <div class="hero-trust">
+        <span>✓ Mobile Closings</span>
+        <span>✓ Online Closings</span>
+        <span>✓ 25+ Years Experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Value Props -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Title & Escrow, Your Way</h2>
+      <p>We've modernized the closing experience without losing the personal touch that makes transactions smooth.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏠</div>
+        <h3>Mobile Closings</h3>
+        <p>We come to you. Your home, your office, your Realtor's conference room — wherever is most convenient. No need to take time off work or fight traffic.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">💻</div>
+        <h3>Online Closings</h3>
+        <p>For sellers, we offer simple and secure online closings. Sign from anywhere with an internet connection. Fast, easy, and completely secure.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast Turnaround</h3>
+        <p>Title commitments in days, not weeks. We understand that time kills deals, so we move fast without cutting corners.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>White-Glove Service</h3>
+        <p>Hand-selected team with decades of combined experience. We've seen it all and know how to navigate even the most complex transactions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Overview -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header light">
+      <h2>Our Services</h2>
+      <p>Comprehensive title and escrow services for buyers, sellers, agents, and lenders throughout Utah.</p>
+    </div>
+    
+    <div class="services-grid">
+      <a href="{{ '/services/residential/' | url }}" class="service-card">
+        <h3>Residential Closings</h3>
+        <p>First-time buyers to luxury homes. We handle every detail so you can focus on moving into your new place.</p>
+        <span class="service-link">Learn More →</span>
+      </a>
+      
+      <a href="{{ '/services/commercial/' | url }}" class="service-card">
+        <h3>Commercial Closings</h3>
+        <p>Complex commercial transactions require experienced professionals. We've closed everything from strip malls to multi-family developments.</p>
+        <span class="service-link">Learn More →</span>
+      </a>
+      
+      <a href="{{ '/services/refinance/' | url }}" class="service-card">
+        <h3>Refinance Closings</h3>
+        <p>Streamlined refinance closings with minimal disruption. We coordinate with your lender to make the process seamless.</p>
+        <span class="service-link">Learn More →</span>
+      </a>
+      
+      <a href="{{ '/services/mobile-closing/' | url }}" class="service-card">
+        <h3>Mobile & Remote Closings</h3>
+        <p>Can't come to us? We'll come to you. Flexible scheduling and convenient locations throughout the Salt Lake Valley.</p>
+        <span class="service-link">Learn More →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Team Preview -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Experience You Can Trust</h2>
+      <p>Our team brings over 35 years of combined experience in title and escrow. We've successfully closed thousands of transactions.</p>
+    </div>
+    
+    <div class="team-grid">
+      {% for member in site.team %}
+      <div class="team-card">
+        <div class="team-photo-placeholder"></div>
+        <h3>{{ member.name }}</h3>
+        <p class="team-title">{{ member.title }}</p>
+        <p class="team-experience">{{ member.experience }} Experience</p>
+        <p class="team-bio">{{ member.bio }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <div class="text-center" style="margin-top: var(--space-xl);">
+      <a href="{{ '/about/' | url }}" class="btn btn-outline">Meet the Full Team →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section section-light">
+  <div class="container">
+    <div class="two-col">
+      <div class="col-content">
+        <h2>Why Agents Choose OnRecord</h2>
+        <p>Real estate agents trust us because we make them look good. When your clients have a smooth closing experience, they remember — and they refer.</p>
+        
+        <ul class="check-list">
+          <li><strong>Responsive Communication</strong> — We answer calls and emails promptly. You'll never be left wondering about the status of your transaction.</li>
+          <li><strong>Proactive Problem Solving</strong> — We catch issues before they become deal-killers. Our experience means we've seen every curveball.</li>
+          <li><strong>Flexible Scheduling</strong> — Evening and weekend closings available. We work around your clients' schedules.</li>
+          <li><strong>Clear Title Commitments</strong> — Fast, accurate title work that keeps your deals on track.</li>
+        </ul>
+        
+        <a href="{{ '/contact/' | url }}" class="btn btn-primary">Partner With Us</a>
+      </div>
+      <div class="col-image">
+        <div class="image-placeholder">Agent shaking hands with client</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Close?</h2>
+      <p>Whether you're an agent, buyer, seller, or lender — we're here to make your transaction smooth and stress-free.</p>
+      <div class="cta-buttons">
+        <a href="{{ '/contact/' | url }}" class="btn btn-accent btn-lg">Request a Quote</a>
+        <a href="tel:{{ site.phone }}" class="btn btn-outline-light btn-lg">Call {{ site.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="section">
+  <div class="container">
+    <div class="location-card">
+      <div class="location-info">
+        <h2>Visit Our Office</h2>
+        <p><strong>{{ site.address.street }}</strong><br>{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}</p>
+        <p><strong>Hours:</strong> {{ site.hours }}</p>
+        <p><strong>Phone:</strong> <a href="tel:{{ site.phone }}">{{ site.phone }}</a></p>
+        <p><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <a href="https://maps.google.com/?q={{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}" target="_blank" class="btn btn-outline">Get Directions →</a>
+      </div>
+      <div class="location-map">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.1!2d-111.86!3d40.62!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s1275+E+Fort+Union+Blvd%2C+Midvale%2C+UT+84047!5e0!3m2!1sen!2sus!4v1234567890" 
+          width="100%" 
+          height="300" 
+          style="border:0; border-radius: 12px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>

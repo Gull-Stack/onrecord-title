@@ -1,0 +1,42 @@
+{
+  "name": "OnRecord Title",
+  "tagline": "A Modern Spin on Title",
+  "description": "Utah's trusted title and escrow company. Mobile closings, online closings for sellers, and white-glove service from experienced professionals. Serving Salt Lake Valley and beyond.",
+  "url": "https://onrecordtitle.com",
+  "phone": "385-464-2060",
+  "email": "info@onrecordtitle.com",
+  "address": {
+    "street": "1275 E Fort Union Boulevard, Suite 210",
+    "city": "Midvale",
+    "state": "Utah",
+    "zip": "84047"
+  },
+  "license": "Utah Insurance Department Agency License No. 976568",
+  "hours": "Monday - Friday: 8:00 AM - 5:00 PM",
+  "colors": {
+    "primary": "#1a365d",
+    "secondary": "#3182ce",
+    "accent": "#ed8936",
+    "light": "#f7fafc",
+    "dark": "#1a202c"
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": ""
+  },
+  "team": [
+    {
+      "name": "Keli",
+      "title": "Licensed Escrow Officer & Title Examiner",
+      "experience": "25+ years",
+      "bio": "Licensed Escrow officer, Title examiner, and Marketing rep with over 25 years of experience. She has 'seen it all' and can successfully handle any residential or commercial transaction from start to finish."
+    },
+    {
+      "name": "Ciara Sorenson",
+      "title": "Escrow Officer",
+      "experience": "11+ years",
+      "bio": "Started in real estate in 2011 as an assistant before transitioning to title and escrow. Known for her fun, positive attitude and bright energy. Notary certified with deep contract knowledge."
+    }
+  ]
+}

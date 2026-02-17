@@ -1,0 +1,195 @@
+---
+layout: base.njk
+title: About OnRecord Title
+description: Meet the OnRecord Title team - over 35 years of combined experience in Utah title and escrow services. Licensed professionals you can trust.
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>About OnRecord Title</h1>
+    <p>A modern spin on title — with old-fashioned attention to detail.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="about-intro">
+      <h2>White-Glove Service, Every Transaction</h2>
+      <p>Take the guesswork out of title and escrow in your next real estate transaction by hiring OnRecord Title's talented team of experts. Hand-selected and trained to provide white-glove service, our team consists of highly experienced individuals in both the residential and commercial real estate world.</p>
+      <p>Whether you're closing on your first home or your fiftieth commercial property, we treat every transaction with the same level of care and attention to detail. That's what sets us apart.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light" id="team">
+  <div class="container">
+    <div class="section-header">
+      <h2>Meet Our Team</h2>
+      <p>Over 35 years of combined experience. Thousands of successful closings. One mission: making your transaction smooth.</p>
+    </div>
+    
+    <div class="team-grid">
+      <div class="team-card-full">
+        <div class="team-photo-placeholder"></div>
+        <div class="team-details">
+          <h3>Keli</h3>
+          <p class="team-title">Licensed Escrow Officer & Title Examiner</p>
+          <p class="team-experience">25+ Years Experience</p>
+          <p>Keli is a Licensed Escrow officer, Title examiner, and Marketing rep with over 25 years of experience providing excellent customer service in every transaction. She has just about "seen it all" and can successfully handle just about any residential or commercial transaction from start to finish.</p>
+          <p>Her deep knowledge of Utah real estate law and title insurance makes her an invaluable resource for agents, lenders, and clients navigating complex transactions.</p>
+        </div>
+      </div>
+      
+      <div class="team-card-full">
+        <div class="team-photo-placeholder"></div>
+        <div class="team-details">
+          <h3>Ciara Sorenson</h3>
+          <p class="team-title">Escrow Officer</p>
+          <p class="team-experience">11+ Years Experience</p>
+          <p>Ciara began her real estate career in 2011, starting as a real estate assistant before becoming a licensed real estate assistant and later transitioning to the title and escrow side of the industry. With over a decade of experience, she brings a well-rounded perspective and a deep understanding of the transaction process from start to finish.</p>
+          <p>Known for her fun, positive attitude and bright energy, Ciara is a pleasure to work with and a steady presence throughout even the most complex transactions. Her contract knowledge, customer service experience, and notary credentials allow her to support clients and agents with confidence, efficiency, and attention to detail.</p>
+          <p class="team-personal">Born and raised in Sandy, Utah, Ciara now resides in West Valley. Outside of work, she loves spending time with her family—especially her two nephews—along with her two dogs. She enjoys camping, fishing, paddle boarding, traveling to the beach, and attending concerts whenever she can.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Credentials</h2>
+      <p>Licensed, insured, and trusted by Utah's real estate community.</p>
+    </div>
+    
+    <div class="credentials-grid">
+      <div class="credential-card">
+        <h3>Utah Licensed</h3>
+        <p>Utah Insurance Department Agency License No. 976568</p>
+      </div>
+      <div class="credential-card">
+        <h3>Trusted Underwriters</h3>
+        <p>Backed by nationally recognized title insurance underwriters</p>
+      </div>
+      <div class="credential-card">
+        <h3>Notary Services</h3>
+        <p>Certified notary public services for all closing documents</p>
+      </div>
+      <div class="credential-card">
+        <h3>E&O Insured</h3>
+        <p>Errors and omissions insurance for your protection</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Let's Work Together</h2>
+      <p>Experience the OnRecord difference on your next transaction.</p>
+      <a href="{{ '/contact/' | url }}" class="btn btn-accent btn-lg">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.about-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-intro h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.about-intro p {
+  color: var(--gray-600);
+  font-size: 1.125rem;
+  margin-bottom: var(--space-md);
+}
+
+.team-card-full {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-xl);
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 700px) {
+  .team-card-full {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .team-photo-placeholder {
+    margin: 0 auto;
+  }
+}
+
+.team-card-full .team-photo-placeholder {
+  width: 200px;
+  height: 200px;
+  background: var(--gray-200);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.team-details h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.team-details .team-title {
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.team-details .team-experience {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-md);
+}
+
+.team-details p {
+  color: var(--gray-600);
+  margin-bottom: var(--space-md);
+}
+
+.team-personal {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+}
+
+.credential-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.credential-card h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+  color: var(--primary);
+}
+
+.credential-card p {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  margin: 0;
+}
+</style>
