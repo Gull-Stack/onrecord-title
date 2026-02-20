@@ -101,3 +101,30 @@ function calcLenderPolicy(loanAmt) {
     document.getElementById('rateResults').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 })();
+
+/* ---- Inline Rate Quote (audience pages) ---- */
+(function () {
+  document.querySelectorAll('.rate-quote-inline').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var propValue = parseNum(form.querySelector('.rq-propertyValue').value);
+      var loanAmt = parseNum(form.querySelector('.rq-loanAmount').value);
+      var txType = form.querySelector('.rq-transactionType').value;
+      if (propValue <= 0) { form.querySelector('.rq-propertyValue').focus(); return; }
+      var ownerPremium = txType === 'refinance' ? 0 : calcOwnerPolicy(propValue);
+      var lenderPremium = loanAmt > 0 ? calcLenderPolicy(loanAmt) : 0;
+      var searchFee = 250;
+      var escrowFee = 450;
+      var total = ownerPremium + lenderPremium + searchFee + escrowFee;
+      var results = form.nextElementSibling;
+      results.querySelector('.rq-resOwner').textContent = txType === 'refinance' ? 'N/A' : fmt(ownerPremium);
+      results.querySelector('.rq-resLender').textContent = loanAmt > 0 ? fmt(lenderPremium) : 'N/A';
+      results.querySelector('.rq-resSearch').textContent = fmt(searchFee);
+      results.querySelector('.rq-resEscrowFee').textContent = fmt(escrowFee);
+      results.querySelector('.rq-resTotal').textContent = fmt(total);
+      results.querySelector('.rq-lenderRow').style.display = loanAmt > 0 ? 'flex' : 'none';
+      results.style.display = 'block';
+      results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+})();
