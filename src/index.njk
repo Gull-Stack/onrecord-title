@@ -107,7 +107,11 @@ description: OnRecord Title provides expert title insurance and escrow services 
     <div class="team-grid">
       {% for member in site.team %}
       <div class="team-card">
+        {% if member.photo %}
+        <img src="{{ member.photo | url }}" alt="{{ member.name }}" class="team-photo" loading="lazy">
+        {% else %}
         <div class="team-photo-placeholder"></div>
+        {% endif %}
         <h3>{{ member.name }}</h3>
         <p class="team-title">{{ member.title }}</p>
         <p class="team-experience">{{ member.experience }} Experience</p>
