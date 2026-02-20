@@ -1,0 +1,85 @@
+---
+layout: base.njk
+title: Seller Net Sheet Calculator
+metaTitle: Seller Net Sheet Calculator | OnRecord Title — Utah
+metaDescription: Estimate your net proceeds from a home sale in Utah. Our free seller net sheet calculator accounts for commissions, title fees, taxes, and more.
+permalink: /seller-net-sheet/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow" style="color: var(--accent);">Seller Tool</p>
+    <h1>Seller Net Sheet</h1>
+    <p>Estimate how much you'll walk away with after selling your Utah home.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container calc-container">
+    <div class="card calc-card">
+      <h2 style="margin-bottom: var(--space-lg);">Calculate Your Net Proceeds</h2>
+      <form id="netSheetForm" aria-label="Seller net sheet calculator">
+        <div class="form-group">
+          <label for="salePrice">Sale Price ($)</label>
+          <input type="text" id="salePrice" inputmode="numeric" placeholder="450,000" required aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="mortgageBalance">Remaining Mortgage Balance ($)</label>
+          <input type="text" id="mortgageBalance" inputmode="numeric" placeholder="280,000" required aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="agentCommission">Total Agent Commission (%)</label>
+          <input type="text" id="agentCommission" inputmode="decimal" placeholder="5.0" value="5.0">
+        </div>
+        <div class="form-group">
+          <label for="sellerConcessions">Seller Concessions ($)</label>
+          <input type="text" id="sellerConcessions" inputmode="numeric" placeholder="0" value="0">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Net Proceeds</button>
+      </form>
+
+      <div id="netSheetResults" class="calc-results" style="display:none;" aria-live="polite">
+        <h3 style="margin-bottom: var(--space-md);">Estimated Breakdown</h3>
+        <div class="calc-row"><span>Sale Price</span><span id="resPrice"></span></div>
+        <div class="calc-row"><span>Mortgage Payoff</span><span id="resMortgage"></span></div>
+        <div class="calc-row"><span>Agent Commission</span><span id="resCommission"></span></div>
+        <div class="calc-row"><span>Title Insurance (Owner's Policy)</span><span id="resTitleIns"></span></div>
+        <div class="calc-row"><span>Escrow / Closing Fee</span><span id="resEscrow"></span></div>
+        <div class="calc-row"><span>Recording Fees</span><span id="resRecording"></span></div>
+        <div class="calc-row"><span>Property Tax Proration (Est.)</span><span id="resTax"></span></div>
+        <div class="calc-row"><span>Seller Concessions</span><span id="resConcessions"></span></div>
+        <div class="calc-row total"><span>Estimated Net Proceeds</span><span id="resNet"></span></div>
+        <p class="calc-disclaimer">Fees quoted are for residential transactions only. For seller finance or commercial transactions, please <a href="/contact/">contact us</a> directly for a more accurate quote. This is an estimate only — actual figures may vary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container" style="max-width: 800px;">
+    <h2>Understanding Your Net Sheet</h2>
+    <p>A seller net sheet breaks down all the costs associated with selling your home so you know exactly what to expect at closing. Here's what's included:</p>
+    <div class="grid grid-2" style="margin-top: var(--space-xl);">
+      <div>
+        <h4>Agent Commission</h4>
+        <p style="font-size: var(--text-sm);">Typically 5–6% of the sale price, split between the buyer's and seller's agents.</p>
+        <h4>Title Insurance</h4>
+        <p style="font-size: var(--text-sm);">An owner's title insurance policy protects the buyer and is customarily paid by the seller in Utah.</p>
+        <h4>Escrow Fee</h4>
+        <p style="font-size: var(--text-sm);">The fee for the title company to manage the closing process and disburse funds.</p>
+      </div>
+      <div>
+        <h4>Recording Fees</h4>
+        <p style="font-size: var(--text-sm);">County fees to record the deed transfer and mortgage release documents.</p>
+        <h4>Property Tax Proration</h4>
+        <p style="font-size: var(--text-sm);">Your share of property taxes up to the closing date, calculated proportionally.</p>
+        <h4>Seller Concessions</h4>
+        <p style="font-size: var(--text-sm);">Any credits you've agreed to give the buyer toward their closing costs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block scripts %}
+<script src="/js/calculators.js" defer></script>
+{% endblock %}

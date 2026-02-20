@@ -1,0 +1,14 @@
+{
+  "name": "onrecord-title",
+  "version": "1.0.0",
+  "description": "OnRecord Title — A Modern Spin on Title",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "html-minifier-terser": "^7.2.0"
+  }
+}

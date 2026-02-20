@@ -1,0 +1,76 @@
+---
+layout: base.njk
+title: Title Insurance Rate Quote
+metaTitle: Title Insurance Rate Quote Calculator | OnRecord Title — Utah
+metaDescription: Get an instant estimate for title insurance rates in Utah. Our free calculator provides owner's and lender's policy quotes based on your property value.
+permalink: /rate-quote/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow" style="color: var(--accent);">Rate Tool</p>
+    <h1>Rate Quote</h1>
+    <p>Get an instant estimate for title insurance on your Utah property.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container calc-container">
+    <div class="card calc-card">
+      <h2 style="margin-bottom: var(--space-lg);">Title Insurance Rate Calculator</h2>
+      <form id="rateQuoteForm" aria-label="Title insurance rate quote calculator">
+        <div class="form-group">
+          <label for="propertyValue">Property Value / Sale Price ($)</label>
+          <input type="text" id="propertyValue" inputmode="numeric" placeholder="450,000" required aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="loanAmount">Loan Amount ($) <span style="font-weight:normal;color:var(--text-light);">— optional, for lender's policy</span></label>
+          <input type="text" id="loanAmount" inputmode="numeric" placeholder="360,000">
+        </div>
+        <div class="form-group">
+          <label for="transactionType">Transaction Type</label>
+          <select id="transactionType">
+            <option value="purchase">Purchase</option>
+            <option value="refinance">Refinance</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Get Rate Quote</button>
+      </form>
+
+      <div id="rateResults" class="calc-results" style="display:none;" aria-live="polite">
+        <h3 style="margin-bottom: var(--space-md);">Estimated Title Insurance Rates</h3>
+        <div class="calc-row"><span>Owner's Policy</span><span id="resOwner"></span></div>
+        <div class="calc-row" id="lenderRow"><span>Lender's Policy</span><span id="resLender"></span></div>
+        <div class="calc-row"><span>Search Fee</span><span id="resSearch"></span></div>
+        <div class="calc-row"><span>Escrow / Closing Fee</span><span id="resEscrowFee"></span></div>
+        <div class="calc-row total"><span>Estimated Total</span><span id="resTotal"></span></div>
+        <p class="calc-disclaimer">Fees quoted are for residential transactions only. For seller finance or commercial transactions, please <a href="/contact/">contact us</a> directly for a more accurate quote. Rates are estimates based on standard Utah title insurance schedules.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container" style="max-width: 800px;">
+    <h2>Understanding Title Insurance</h2>
+    <p>Title insurance protects property owners and lenders against losses from defects in the title — things like liens, encumbrances, or errors in public records that could threaten your ownership.</p>
+    <div class="grid grid-2" style="margin-top: var(--space-xl);">
+      <div>
+        <h4>Owner's Policy</h4>
+        <p style="font-size: var(--text-sm);">Protects the buyer's equity in the property for as long as they (or their heirs) own it. This is a one-time premium paid at closing.</p>
+        <h4>Lender's Policy</h4>
+        <p style="font-size: var(--text-sm);">Required by most mortgage lenders to protect their interest in the property. The premium is based on the loan amount.</p>
+      </div>
+      <div>
+        <h4>What It Covers</h4>
+        <p style="font-size: var(--text-sm);">Forgery, undisclosed heirs, recording errors, outstanding liens, boundary disputes, and other title defects that could affect your ownership rights.</p>
+        <h4>Why It Matters</h4>
+        <p style="font-size: var(--text-sm);">Even the most thorough title search can't uncover every hidden risk. Title insurance provides peace of mind and financial protection against the unexpected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block scripts %}
+<script src="/js/calculators.js" defer></script>
+{% endblock %}

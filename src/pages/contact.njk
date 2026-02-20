@@ -1,0 +1,109 @@
+---
+layout: base.njk
+title: Contact Us
+metaTitle: Contact OnRecord Title | Utah Title & Escrow Company
+metaDescription: Reach out to OnRecord Title for title insurance, escrow services, or closing questions. Call 385-464-2060 or fill out our contact form.
+permalink: /contact/
+---
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow" style="color: var(--accent);">Get in Touch</p>
+    <h1>Contact Us</h1>
+    <p>Have a question or ready to open an order? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <div>
+        <div class="card calc-card" id="contactFormCard">
+          <h2 style="margin-bottom: var(--space-lg);">Send Us a Message</h2>
+          <form id="contactForm" aria-label="Contact form" novalidate>
+            <input type="hidden" id="formTimestamp" value="">
+            {# Honeypot #}
+            <div class="honeypot" aria-hidden="true">
+              <label for="fax_number">Fax</label>
+              <input type="text" id="fax_number" name="fax_number" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+              <label for="contactName">Name *</label>
+              <input type="text" id="contactName" name="name" required aria-required="true" autocomplete="name">
+              <p class="form-error">Please enter your name.</p>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Phone</label>
+              <input type="tel" id="contactPhone" name="phone" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email *</label>
+              <input type="email" id="contactEmail" name="email" required aria-required="true" autocomplete="email">
+              <p class="form-error">Please enter a valid email address.</p>
+            </div>
+            <div class="form-group">
+              <label for="contactMethod">Best Way to Contact</label>
+              <select id="contactMethod" name="contact_method">
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="either">Either</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject *</label>
+              <input type="text" id="contactSubject" name="subject" required aria-required="true">
+              <p class="form-error">Please enter a subject.</p>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message *</label>
+              <textarea id="contactMessage" name="message" required aria-required="true" rows="5"></textarea>
+              <p class="form-error">Please enter your message.</p>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="checkmark">✅</div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. Our team will get back to you within one business day.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom: var(--space-xl);">
+          <h3>Contact Information</h3>
+          <div class="location-details" style="margin-top: var(--space-md);">
+            <div class="detail">
+              <span class="icon">📞</span>
+              <a href="{{ site.phoneTel }}" style="font-size: var(--text-lg); font-weight: var(--font-semibold);">{{ site.phone }}</a>
+            </div>
+            <div class="detail">
+              <span class="icon">✉️</span>
+              <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </div>
+            <div class="detail">
+              <span class="icon">📍</span>
+              <span>{{ site.address }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Office Hours</h3>
+          <div style="margin-top: var(--space-md); font-size: var(--text-sm);">
+            <div style="display: flex; justify-content: space-between; padding: var(--space-xs) 0;">
+              <span>Monday – Friday</span><span style="font-weight: var(--font-semibold);">9:00 AM – 5:00 PM</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: var(--space-xs) 0;">
+              <span>Saturday – Sunday</span><span style="color: var(--text-light);">Closed</span>
+            </div>
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--text-light); margin-top: var(--space-md);">After-hours and weekend closings available by appointment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block scripts %}
+<script src="/js/contact.js" defer></script>
+{% endblock %}

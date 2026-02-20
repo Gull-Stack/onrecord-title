@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ metaTitle or title + " | " + site.name }}</title>
+  <meta name="description" content="{{ metaDescription or 'OnRecord Title provides professional title insurance, escrow, and closing services across Utah. A modern spin on title.' }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  {# Open Graph #}
+  <meta property="og:title" content="{{ metaTitle or title + ' | ' + site.name }}">
+  <meta property="og:description" content="{{ metaDescription or 'OnRecord Title provides professional title insurance, escrow, and closing services across Utah.' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  {# Twitter #}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ metaTitle or title + ' | ' + site.name }}">
+  <meta name="twitter:description" content="{{ metaDescription or 'Professional title insurance, escrow, and closing services across Utah.' }}">
+
+  {# Fonts #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  {# Schema.org LocalBusiness #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ site.name }}",
+    "description": "Professional title insurance, escrow, and closing services in Utah.",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.phone }}",
+    "email": "{{ site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1275 E Fort Union Boulevard, Suite 210",
+      "addressLocality": "Midvale",
+      "addressRegion": "UT",
+      "postalCode": "84047",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Utah"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  {# Header #}
+  <header class="site-header transparent" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="{{ site.name }} — Home">
+        <img src="/images/logo-white.png" alt="{{ site.name }}" width="300" height="44">
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-desktop">
+          <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
+          <li><a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
+          <li><a href="/seller-net-sheet/" {% if page.url == "/seller-net-sheet/" %}aria-current="page"{% endif %}>Seller Net Sheet</a></li>
+          <li><a href="/rate-quote/" {% if page.url == "/rate-quote/" %}aria-current="page"{% endif %}>Rate Quote</a></li>
+          <li><a href="/locations/" {% if page.url == "/locations/" %}aria-current="page"{% endif %}>Locations</a></li>
+          <li><a href="/credentials/" {% if page.url == "/credentials/" %}aria-current="page"{% endif %}>Credentials</a></li>
+          <li><a href="/earnest-money/" {% if page.url == "/earnest-money/" %}aria-current="page"{% endif %}>Earnest Money</a></li>
+          <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-mobile" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/seller-net-sheet/">Seller Net Sheet</a></li>
+        <li><a href="/rate-quote/">Rate Quote</a></li>
+        <li><a href="/locations/">Locations</a></li>
+        <li><a href="/credentials/">Credentials</a></li>
+        <li><a href="/earnest-money/">Earnest Money</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+    {{ content | safe }}
+  </main>
+
+  {# Footer #}
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/images/logo-white.png" alt="{{ site.name }}" width="200" height="29" loading="lazy">
+          <p>{{ site.tagline }}. Professional title insurance, escrow, and closing services throughout Utah. Trusted by agents, lenders, and homeowners.</p>
+          <p style="margin-top: var(--space-md); font-size: var(--text-xs);">{{ site.license }}</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/seller-net-sheet/">Seller Net Sheet</a></li>
+            <li><a href="/rate-quote/">Rate Quote</a></li>
+            <li><a href="/locations/">Locations</a></li>
+            <li><a href="/credentials/">Credentials</a></li>
+            <li><a href="/earnest-money/">Earnest Money</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="{{ site.phoneTel }}">{{ site.phone }}</a></li>
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li>{{ site.address }}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {{ "" | year }} {{ site.name }}. All rights reserved.</span>
+        <span>A Modern Spin on Title</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
