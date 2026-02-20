@@ -491,6 +491,10 @@ p { margin-bottom: var(--space-md); text-wrap: pretty; }
   font-size: var(--text-3xl); color: var(--text-light);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.team-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
 .team-card:hover .team-photo { transform: scale(1.05); box-shadow: 0 4px 20px rgba(65,116,141,0.2); }
 .team-card h3 { margin-bottom: var(--space-xs); font-size: var(--text-lg); }
 .team-card .role { color: var(--primary); font-size: var(--text-sm); font-weight: var(--font-medium); margin-bottom: var(--space-sm); }
