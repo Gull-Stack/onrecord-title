@@ -23,7 +23,7 @@
   {# Fonts #}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/styles.css">
 
@@ -51,8 +51,12 @@
     }
   }
   </script>
+  {% block head %}{% endblock %}
 </head>
 <body>
+
+  {# Scroll Progress Bar #}
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -65,12 +69,25 @@
       <nav aria-label="Main navigation">
         <ul class="nav-desktop">
           <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
+          <li class="nav-dropdown">
+            <a href="/services/" {% if page.url | startsWith("/services") %}aria-current="page"{% endif %}>Services <span class="dropdown-arrow"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/services/">All Services</a></li>
+              <li><a href="/services/residential/">Residential Closings</a></li>
+              <li><a href="/services/commercial/">Commercial Closings</a></li>
+              <li><a href="/services/mobile-closings/">Mobile Closings</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#">Tools <span class="dropdown-arrow"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/seller-net-sheet/">Seller Net Sheet</a></li>
+              <li><a href="/rate-quote/">Rate Quote</a></li>
+              <li><a href="/earnest-money/">Earnest Money</a></li>
+            </ul>
+          </li>
           <li><a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a></li>
-          <li><a href="/seller-net-sheet/" {% if page.url == "/seller-net-sheet/" %}aria-current="page"{% endif %}>Seller Net Sheet</a></li>
-          <li><a href="/rate-quote/" {% if page.url == "/rate-quote/" %}aria-current="page"{% endif %}>Rate Quote</a></li>
-          <li><a href="/locations/" {% if page.url == "/locations/" %}aria-current="page"{% endif %}>Locations</a></li>
-          <li><a href="/credentials/" {% if page.url == "/credentials/" %}aria-current="page"{% endif %}>Credentials</a></li>
-          <li><a href="/earnest-money/" {% if page.url == "/earnest-money/" %}aria-current="page"{% endif %}>Earnest Money</a></li>
+          <li><a href="/blog/" {% if page.url | startsWith("/blog") %}aria-current="page"{% endif %}>Blog</a></li>
           <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
         </ul>
       </nav>
@@ -79,18 +96,50 @@
       </button>
       <ul class="nav-mobile" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
         <li><a href="/">Home</a></li>
+        <li>
+          <button class="mobile-submenu-toggle" type="button">Services <span class="arrow">▼</span></button>
+          <ul class="mobile-submenu">
+            <li><a href="/services/">All Services</a></li>
+            <li><a href="/services/residential/">Residential</a></li>
+            <li><a href="/services/commercial/">Commercial</a></li>
+            <li><a href="/services/mobile-closings/">Mobile Closings</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="mobile-submenu-toggle" type="button">Tools <span class="arrow">▼</span></button>
+          <ul class="mobile-submenu">
+            <li><a href="/seller-net-sheet/">Seller Net Sheet</a></li>
+            <li><a href="/rate-quote/">Rate Quote</a></li>
+            <li><a href="/earnest-money/">Earnest Money</a></li>
+          </ul>
+        </li>
         <li><a href="/about/">About</a></li>
-        <li><a href="/seller-net-sheet/">Seller Net Sheet</a></li>
-        <li><a href="/rate-quote/">Rate Quote</a></li>
-        <li><a href="/locations/">Locations</a></li>
-        <li><a href="/credentials/">Credentials</a></li>
-        <li><a href="/earnest-money/">Earnest Money</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/testimonials/">Testimonials</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
   </header>
 
   <main id="main" role="main">
+    {# Breadcrumbs for inner pages #}
+    {% if breadcrumbs %}
+    <div class="breadcrumbs">
+      <div class="container">
+        <a href="/">Home</a>
+        {% for crumb in breadcrumbs %}
+          <span class="separator">›</span>
+          {% if crumb.url %}
+            <a href="{{ crumb.url }}">{{ crumb.label }}</a>
+          {% else %}
+            <span>{{ crumb.label }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
     {{ content | safe }}
   </main>
 
@@ -101,17 +150,31 @@
         <div class="footer-brand">
           <img src="/images/logo-white.png" alt="{{ site.name }}" width="200" height="29" loading="lazy">
           <p>{{ site.tagline }}. Professional title insurance, escrow, and closing services throughout Utah. Trusted by agents, lenders, and homeowners.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+          </div>
           <p style="margin-top: var(--space-md); font-size: var(--text-xs);">{{ site.license }}</p>
         </div>
         <div class="footer-links">
-          <h4>Quick Links</h4>
+          <h4>Services</h4>
           <ul>
-            <li><a href="/about/">About Us</a></li>
+            <li><a href="/services/">All Services</a></li>
+            <li><a href="/services/residential/">Residential Closings</a></li>
+            <li><a href="/services/commercial/">Commercial Closings</a></li>
+            <li><a href="/services/mobile-closings/">Mobile Closings</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/testimonials/">Testimonials</a></li>
             <li><a href="/seller-net-sheet/">Seller Net Sheet</a></li>
             <li><a href="/rate-quote/">Rate Quote</a></li>
-            <li><a href="/locations/">Locations</a></li>
             <li><a href="/credentials/">Credentials</a></li>
-            <li><a href="/earnest-money/">Earnest Money</a></li>
           </ul>
         </div>
         <div class="footer-links">
@@ -120,6 +183,7 @@
             <li><a href="{{ site.phoneTel }}">{{ site.phone }}</a></li>
             <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             <li>{{ site.address }}</li>
+            <li style="margin-top: var(--space-md);"><a href="https://onrecordtitle.review.birdeye.com" target="_blank" rel="noopener" style="color: var(--accent);">⭐ Leave a Review</a></li>
           </ul>
         </div>
       </div>

@@ -9,7 +9,7 @@ metaDescription: OnRecord Title provides professional title insurance, escrow, a
 <section class="hero">
   <div class="container hero-content fade-in">
     <p class="eyebrow" style="color: var(--accent);">A Modern Spin on Title</p>
-    <h1>Your Trusted Partner for Utah Title & Escrow</h1>
+    <h1>Your Trusted Partner for <span class="gradient-text-hero">Utah Title & Escrow</span></h1>
     <p class="subtitle">Smooth closings, clear communication, and the modern experience you deserve. OnRecord Title delivers reliable title insurance, escrow, and closing services across Utah.</p>
     <div class="hero-ctas">
       <a href="/rate-quote/" class="btn btn-primary btn-lg">Get a Quote</a>
@@ -18,16 +18,40 @@ metaDescription: OnRecord Title provides professional title insurance, escrow, a
   </div>
 </section>
 
+{# Stats #}
+<section class="section section-gradient">
+  <div class="container">
+    <div class="grid grid-4 reveal-stagger">
+      <div class="card stat-card reveal">
+        <div class="stat-number" data-count="500" data-suffix="+">0+</div>
+        <div class="stat-label">Closings Completed</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="stat-number" data-count="98" data-suffix="%">0%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="stat-number" data-count="15" data-suffix="+">0+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="card stat-card reveal">
+        <div class="stat-number" data-count="24" data-suffix="hr">0hr</div>
+        <div class="stat-label">Avg. Turnaround</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {# Services #}
 <section class="section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <p class="eyebrow">What We Do</p>
-      <h2>Title Services Built Around You</h2>
+      <h2>Title Services <span class="gradient-text">Built Around You</span></h2>
       <p>From title searches to closing day, we handle every detail so you can focus on what matters.</p>
     </div>
-    <div class="grid grid-3">
-      <div class="card card-hover service-card">
+    <div class="grid grid-3 reveal-stagger">
+      <div class="card card-hover service-card reveal">
         <img src="/images/title-insurance.jpg" alt="Title insurance documents being reviewed at a desk" loading="lazy">
         <div class="card-body">
           <div class="card-icon">🔍</div>
@@ -35,7 +59,7 @@ metaDescription: OnRecord Title provides professional title insurance, escrow, a
           <p>Comprehensive title searches and insurance policies that protect your investment. We identify and resolve issues before they become problems.</p>
         </div>
       </div>
-      <div class="card card-hover service-card">
+      <div class="card card-hover service-card reveal">
         <img src="/images/escrow.jpg" alt="Keys being handed over during an escrow closing" loading="lazy">
         <div class="card-body">
           <div class="card-icon">🏦</div>
@@ -43,7 +67,7 @@ metaDescription: OnRecord Title provides professional title insurance, escrow, a
           <p>Secure, transparent escrow management. Your funds are held safely while we coordinate every detail of your transaction.</p>
         </div>
       </div>
-      <div class="card card-hover service-card">
+      <div class="card card-hover service-card reveal">
         <img src="/images/closing.jpg" alt="Happy homeowners receiving keys at closing" loading="lazy">
         <div class="card-body">
           <div class="card-icon">🔑</div>
@@ -52,26 +76,35 @@ metaDescription: OnRecord Title provides professional title insurance, escrow, a
         </div>
       </div>
     </div>
+    <div class="text-center reveal" style="margin-top: var(--space-xl);">
+      <a href="/services/" class="btn btn-outline">View All Services →</a>
+    </div>
   </div>
 </section>
 
 {# Why OnRecord #}
-<section class="section section-light">
+<section class="section section-light" style="position: relative;">
+  <div class="section-wave-top">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" fill="var(--light-bg)">
+      <path d="M0,60 C300,0 900,0 1200,60 L1200,0 L0,0 Z" fill="var(--white)"></path>
+    </svg>
+  </div>
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <p class="eyebrow">Why OnRecord</p>
-      <h2>A Better Way to Close</h2>
+      <h2>A Better Way to <span class="gradient-text">Close</span></h2>
     </div>
-    <div class="grid grid-3">
-      <div class="card card-hover closing-option">
+    <div class="grid grid-3 reveal-stagger">
+      <div class="card card-hover closing-option reveal">
         <img src="/images/mobile-closing.jpg" alt="Mobile notary visiting a client's home for closing" loading="lazy">
         <div class="card-body">
           <div class="card-icon">🚗</div>
           <h4>Mobile Closing</h4>
           <p style="font-size: var(--text-sm); color: var(--text-light);">We come to you — your office, a coffee shop, wherever works. Convenient closings on your schedule.</p>
+          <a href="/services/mobile-closings/" class="read-more" style="margin-top: var(--space-sm);">Learn more</a>
         </div>
       </div>
-      <div class="card card-hover closing-option">
+      <div class="card card-hover closing-option reveal">
         <img src="/images/online-closing.jpg" alt="Remote online closing via video call" loading="lazy">
         <div class="card-body">
           <div class="card-icon">📱</div>
@@ -79,7 +112,7 @@ metaDescription: OnRecord Title provides professional title insurance, escrow, a
           <p style="font-size: var(--text-sm); color: var(--text-light);">Digital documents, e-signatures, and real-time updates. Close from anywhere with modern technology.</p>
         </div>
       </div>
-      <div class="card card-hover closing-option">
+      <div class="card card-hover closing-option reveal">
         <img src="/images/office-closing.jpg" alt="Professional office closing meeting" loading="lazy">
         <div class="card-body">
           <div class="card-icon">🏢</div>
@@ -94,67 +127,73 @@ metaDescription: OnRecord Title provides professional title insurance, escrow, a
 {# Team Preview #}
 <section class="section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <p class="eyebrow">Our Team</p>
       <h2>Real People, Real Expertise</h2>
       <p>Our team combines decades of title experience with modern tools and a genuine love for what we do.</p>
     </div>
-    <div class="grid grid-3">
-      <div class="card team-card">
+    <div class="grid grid-3 reveal-stagger">
+      <div class="card card-hover team-card reveal">
         <div class="team-photo">👤</div>
         <h3>Spencer "Shigs" Higby</h3>
         <p class="role">Order Entry & Technology</p>
         <p style="font-size: var(--text-sm); color: var(--text-light);">University of Utah student pursuing Business & AI. Spencer brings fresh tech perspectives to keep OnRecord ahead of the curve.</p>
       </div>
-      <div class="card team-card">
+      <div class="card card-hover team-card reveal">
         <div class="team-photo">👤</div>
         <h3>Team Member</h3>
         <p class="role">Escrow Officer</p>
         <p style="font-size: var(--text-sm); color: var(--text-light);">Dedicated to making every closing seamless with years of experience in Utah real estate transactions.</p>
       </div>
-      <div class="card team-card">
+      <div class="card card-hover team-card reveal">
         <div class="team-photo">👤</div>
         <h3>Team Member</h3>
         <p class="role">Title Examiner</p>
         <p style="font-size: var(--text-sm); color: var(--text-light);">Meticulous title research ensuring clean, insurable titles on every transaction.</p>
       </div>
     </div>
-    <div class="text-center" style="margin-top: var(--space-xl);">
+    <div class="text-center reveal" style="margin-top: var(--space-xl);">
       <a href="/about/" class="btn btn-outline">Meet the Full Team</a>
     </div>
   </div>
 </section>
 
 {# Testimonials #}
-<section class="section section-light">
+<section class="section section-gradient-accent">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal">
       <p class="eyebrow">What People Say</p>
-      <h2>Trusted by Utah Real Estate Professionals</h2>
+      <h2>Trusted by Utah <span class="gradient-text">Real Estate Professionals</span></h2>
     </div>
-    <div class="grid grid-3">
-      <div class="card testimonial-card">
+    <div class="grid grid-3 reveal-stagger">
+      <div class="card card-hover testimonial-card reveal">
+        <div class="stars">★★★★★</div>
         <p class="testimonial-text">"OnRecord made our closing incredibly smooth. Communication was top-notch from start to finish. I recommend them to all my clients."</p>
         <p class="testimonial-author">Real Estate Agent</p>
         <p class="testimonial-role">Salt Lake City, UT</p>
       </div>
-      <div class="card testimonial-card">
+      <div class="card card-hover testimonial-card reveal">
+        <div class="stars">★★★★★</div>
         <p class="testimonial-text">"The mobile closing option was a game-changer for our busy schedules. Professional, efficient, and friendly — everything you want in a title company."</p>
         <p class="testimonial-author">Home Buyer</p>
         <p class="testimonial-role">Midvale, UT</p>
       </div>
-      <div class="card testimonial-card">
+      <div class="card card-hover testimonial-card reveal">
+        <div class="stars">★★★★★</div>
         <p class="testimonial-text">"Fast, accurate, and always available when I have questions. OnRecord is my go-to title company for every transaction."</p>
         <p class="testimonial-author">Mortgage Lender</p>
         <p class="testimonial-role">Provo, UT</p>
       </div>
+    </div>
+    <div class="text-center reveal" style="margin-top: var(--space-xl);">
+      <a href="/testimonials/" class="btn btn-outline">Read More Reviews →</a>
     </div>
   </div>
 </section>
 
 {# CTA #}
 <section class="cta-banner">
-  <div class="container">
+  <div class="container reveal">
     <h2>Ready to Get Started?</h2>
     <p>Whether you're buying, selling, or refinancing — we're here to make the title process effortless.</p>
     <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">

@@ -20,6 +20,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
+  eleventyConfig.addFilter("startsWith", (str, prefix) => str && str.startsWith(prefix));
 
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
