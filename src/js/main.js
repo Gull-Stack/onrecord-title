@@ -1,5 +1,37 @@
 /* OnRecord Title — Main JS (Tier-S) */
 
+// Hero video carousel
+(function () {
+  var videos = document.querySelectorAll('.hero-video');
+  if (videos.length < 2) return; // Need at least 2 videos for carousel
+  
+  var currentIndex = 0;
+  var intervalTime = 10000; // 10 seconds per video
+  
+  function rotateVideos() {
+    // Fade out current video
+    videos[currentIndex].classList.remove('active');
+    
+    // Move to next video
+    currentIndex = (currentIndex + 1) % videos.length;
+    
+    // Fade in next video and play it
+    videos[currentIndex].classList.add('active');
+    videos[currentIndex].play();
+  }
+  
+  // Start the first video
+  videos[0].play();
+  
+  // Rotate videos every 10 seconds
+  setInterval(rotateVideos, intervalTime);
+  
+  // Preload all videos
+  videos.forEach(function(video) {
+    video.load();
+  });
+})();
+
 // Scroll progress indicator
 (function () {
   const bar = document.querySelector('.scroll-progress');
