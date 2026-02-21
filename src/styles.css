@@ -18,7 +18,7 @@
 
   --text: #595959;
   --text-dark: #333333;
-  --text-light: #949494;
+  --text-light: #6b6b6b; /* Fixed: was #949494 (2.6:1 contrast), now 4.6:1 (passes WCAG AA) */
   --black: #000000;
   --white: #ffffff;
   --light-bg: #f6f8f5;
