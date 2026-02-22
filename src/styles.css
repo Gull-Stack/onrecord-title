@@ -402,7 +402,7 @@ p { margin-bottom: var(--space-md); text-wrap: pretty; }
                 url('/images/hero-bg.jpg') center/cover no-repeat;
   }
 }
-.hero-content { position: relative; z-index: 1; max-width: 700px; }
+.hero-content { position: relative; z-index: 2; max-width: 700px; }
 .hero h1 { color: var(--white); margin-bottom: var(--space-lg); letter-spacing: -0.02em; }
 .hero .subtitle {
   font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl));
