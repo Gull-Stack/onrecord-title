@@ -27,16 +27,30 @@
 
   <link rel="stylesheet" href="/styles.css">
 
-  {# Google Analytics - TODO: Replace with actual GA4 Measurement ID #}
-  {# 
+  {# Google Analytics 4 - TODO: Replace G-XXXXXXXXXX with actual Measurement ID from analytics.google.com #}
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-XXXXXXXXXX', {
+      'send_page_view': true,
+      'anonymize_ip': true
+    });
+    
+    // Track form submissions
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', function() {
+          gtag('event', 'form_submit', {
+            'event_category': 'Contact',
+            'event_label': 'Contact Form'
+          });
+        });
+      }
+    });
   </script>
-  #}
 
   {# Schema.org LocalBusiness #}
   <script type="application/ld+json">

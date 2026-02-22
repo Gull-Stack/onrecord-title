@@ -75,9 +75,43 @@
       return;
     }
 
-    // All passed — in production, POST to API endpoint
-    // For now, show success
-    showSuccess();
+    // Disable submit button
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    // POST to API endpoint
+    var formData = {
+      name: name,
+      email: email,
+      phone: document.getElementById('contactPhone').value.trim(),
+      contact_method: document.getElementById('contactMethod').value,
+      subject: subject,
+      message: message,
+      fax_number: document.getElementById('fax_number').value,
+      timestamp: document.getElementById('formTimestamp').value
+    };
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    })
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.success) {
+        showSuccess();
+      } else {
+        throw new Error(data.error || 'Failed to send message');
+      }
+    })
+    .catch(function(error) {
+      console.error('Form submission error:', error);
+      alert('Failed to send message. Please try again or call us directly at 385-464-2060.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
   });
 
   function showSuccess() {
