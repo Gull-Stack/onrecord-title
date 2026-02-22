@@ -380,7 +380,7 @@ p { margin-bottom: var(--space-md); text-wrap: pretty; }
 /* Hero Overlay (darkens video for text readability) */
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg, rgba(65,116,141,0.75) 0%, rgba(52,93,114,0.82) 50%, rgba(42,74,94,0.88) 100%);
+  background: linear-gradient(135deg, rgba(65,116,141,0.45) 0%, rgba(52,93,114,0.55) 50%, rgba(42,74,94,0.65) 100%);
 }
 .hero-overlay::before {
   content: ''; position: absolute; inset: 0;
