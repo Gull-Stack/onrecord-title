@@ -392,14 +392,12 @@ p { margin-bottom: var(--space-md); text-wrap: pretty; }
   background: linear-gradient(to top, rgba(255,255,255,0.04) 0%, transparent 100%);
 }
 
-/* Mobile: Hide video, use static background for performance */
+/* Mobile: Video stays enabled, just ensure proper scaling */
 @media (max-width: 768px) {
-  .hero-video-bg {
-    display: none;
-  }
-  .hero {
-    background: linear-gradient(135deg, rgba(65,116,141,0.92) 0%, rgba(52,93,114,0.95) 50%, rgba(42,74,94,0.97) 100%),
-                url('/images/hero-bg.jpg') center/cover no-repeat;
+  .hero-video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
   }
 }
 .hero-content { position: relative; z-index: 2; max-width: 700px; }
