@@ -818,7 +818,7 @@ p { margin-bottom: var(--space-md); text-wrap: pretty; }
   position: relative; border-bottom: 1px solid var(--gray-100);
 }
 .checklist li::before {
-  content: '✓'; position: absolute; left: 0; color: var(--success);
+  content: ''; position: absolute; left: 0; color: var(--success);
   font-weight: var(--font-bold);
 }
 
