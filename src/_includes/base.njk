@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} | {{ site.name }}</title>
-  <meta name="description" content="{{ description or site.description }}">
-  
-  <meta property="og:title" content="{{ title }} | {{ site.name }}">
-  <meta property="og:description" content="{{ description or site.description }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  
-  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | url }}">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "name": "{{ site.name }}",
-    "description": "{{ site.description }}",
-    "url": "{{ site.url }}",
-    "telephone": "{{ site.phone }}",
-    "email": "{{ site.email }}",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "{{ site.address.street }}",
-      "addressLocality": "{{ site.address.city }}",
-      "addressRegion": "{{ site.address.state }}",
-      "postalCode": "{{ site.address.zip }}",
-      "addressCountry": "US"
-    },
-    "areaServed": {
-      "@type": "State",
-      "name": "Utah"
-    },
-    "priceRange": "$$"
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }}{% else %}{{ site.name }} - Utah Title & Escrow{% endif %}</title>
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["Organization", "LocalBusiness"],
+        "name": "{{ site.name }}",
+        "url": "{{ site.url }}",
+        "telephone": "{{ site.phone }}",
+        "email": "{{ site.email }}",
+        "description": "{{ site.description }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ site.address.street }}",
+            "addressLocality": "{{ site.address.city }}",
+            "addressRegion": "{{ site.address.state }}",
+            "postalCode": "{{ site.address.zip }}",
+            "addressCountry": "US"
+        },
+        "openingHours": "Mo-Fr 08:00-17:00",
+        "areaServed": "Utah",
+        "priceRange": "$$"
+    }
+    </script>
+
+    {% if breadcrumb %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/" }
+            {% for crumb in breadcrumb %},
+            { "@type": "ListItem", "position": {{ loop.index + 1 }}, "name": "{{ crumb.name }}", "item": "{{ site.url }}{{ crumb.url }}" }
+            {% endfor %}
+        ]
+    }
+    </script>
+    {% endif %}
 </head>
 <body>
-  {% include "header.njk" %}
-  
-  <main>
-    {{ content | safe }}
-  </main>
-  
-  {% include "footer.njk" %}
-  
-  <script src="{{ '/assets/js/main.js' | url }}"></script>
+    {% include "header.njk" %}
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+
+    <script>
+        // Mobile nav toggle
+        const toggle = document.getElementById('navToggle');
+        const menu = document.getElementById('navMenu');
+        if (toggle && menu) {
+            toggle.addEventListener('click', () => menu.classList.toggle('active'));
+        }
+    </script>
 </body>
 </html>

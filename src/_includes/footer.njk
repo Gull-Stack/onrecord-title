@@ -1,44 +1,43 @@
 <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <span class="footer-logo">On<span class="logo-accent">Record</span> Title</span>
-        <p>{{ site.tagline }}</p>
-        <p class="footer-license">{{ site.license }}</p>
-      </div>
-      
-      <div class="footer-links">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="{{ '/services/residential/' | url }}">Residential Closings</a></li>
-          <li><a href="{{ '/services/commercial/' | url }}">Commercial Closings</a></li>
-          <li><a href="{{ '/services/mobile-closing/' | url }}">Mobile Closings</a></li>
-          <li><a href="{{ '/services/online-closing/' | url }}">Online Closings</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-links">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="{{ '/about/' | url }}">About Us</a></li>
-          <li><a href="{{ '/about/#team' | url }}">Our Team</a></li>
-          <li><a href="{{ '/locations/' | url }}">Locations</a></li>
-          <li><a href="{{ '/contact/' | url }}">Contact</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-contact">
-        <h4>Contact Us</h4>
-        <p><a href="tel:{{ site.phone }}">{{ site.phone }}</a></p>
-        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-        <p>{{ site.address.street }}<br>{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}</p>
-        <p class="footer-hours">{{ site.hours }}</p>
-      </div>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>{{ site.name }}</h4>
+                <p class="footer-description">{{ site.description }}</p>
+                <p style="margin-top: 1rem; font-size: 0.75rem; color: rgba(255,255,255,0.4);">{{ site.license }}</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="/services/residential/">Residential</a></li>
+                    <li><a href="/services/commercial/">Commercial</a></li>
+                    <li><a href="/services/mobile-closing/">Mobile Closing</a></li>
+                    <li><a href="/services/refinance/">Refinance</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/areas/">Areas Served</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:{{ site.phone }}">{{ site.phone }}</a></li>
+                    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                    <li>{{ site.address.street }}</li>
+                    <li>{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}</li>
+                    <li>{{ site.hours }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">&copy; {{ "" | currentYear }} {{ site.name }}. All rights reserved.</span>
+            <span class="gullstack-credit">Built by <a href="https://gullstack.com" target="_blank" rel="noopener">GullStack</a></span>
+        </div>
     </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2026 {{ site.name }}. All rights reserved.</p>
-      <p class="footer-credit">Marketing by <a href="https://gullstack.com" target="_blank" rel="noopener">GullStack</a></p>
-    </div>
-  </div>
 </footer>

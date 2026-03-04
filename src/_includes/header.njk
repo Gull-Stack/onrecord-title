@@ -1,24 +1,33 @@
 <header class="header">
-  <div class="container">
     <nav class="nav">
-      <a href="{{ '/' | url }}" class="logo">
-        <span class="logo-text">On<span class="logo-accent">Record</span> Title</span>
-      </a>
-      
-      <button class="mobile-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <ul class="nav-links">
-        <li><a href="{{ '/services/' | url }}">Services</a></li>
-        <li><a href="{{ '/about/' | url }}">About</a></li>
-        <li><a href="{{ '/areas/' | url }}">Areas Served</a></li>
-        <li><a href="{{ '/faq/' | url }}">FAQ</a></li>
-        <li><a href="tel:{{ site.phone }}" class="nav-phone">{{ site.phone }}</a></li>
-        <li><a href="{{ '/contact/' | url }}" class="btn btn-primary">Get a Quote</a></li>
-      </ul>
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/">On<span>Record</span> Title</a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="/about/" class="nav-link">About</a></li>
+                    <li class="nav-dropdown">
+                        <a href="/services/" class="nav-link nav-dropdown-trigger">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:4px;"><path d="M1 1l4 4 4-4"/></svg></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="/services/residential/">Residential</a></li>
+                            <li><a href="/services/commercial/">Commercial</a></li>
+                            <li><a href="/services/mobile-closing/">Mobile Closing</a></li>
+                            <li><a href="/services/refinance/">Refinance</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/areas/" class="nav-link">Areas</a></li>
+                    <li><a href="/faq/" class="nav-link">FAQ</a></li>
+                    <li><a href="/contact/" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:{{ site.phone }}" class="nav-phone">{{ site.phone }}</a>
+                <a href="/contact/" class="btn btn-primary btn-sm">Send an Order</a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
     </nav>
-  </div>
 </header>
