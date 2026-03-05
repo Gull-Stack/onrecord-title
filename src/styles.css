@@ -1044,3 +1044,27 @@ p { margin-bottom: var(--space-md); text-wrap: pretty; }
 .pain-solution-card .solution-text {
   color: var(--text);
 }
+
+/* --- v3 Hybrid: Scrolling Trust Bar --- */
+@keyframes scrollPartners {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.partner-text {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  opacity: 0.35;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+/* --- v3 Hybrid: Comparison Table Enhancements --- */
+.comparison-table .check { color: var(--success); font-weight: var(--font-bold); font-size: 1.2rem; }
+.comparison-table .x-mark { color: var(--gray-300); font-size: 1.2rem; }
+
+/* --- v3 Hybrid: GullStack Footer Credit --- */
+.gullstack-credit { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+.gullstack-credit a { color: var(--accent); text-decoration: none; }
