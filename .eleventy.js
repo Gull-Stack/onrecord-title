@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/.well-known");
 
   eleventyConfig.addTransform("htmlmin", async function (content) {
     if ((this.page.outputPath || "").endsWith(".html")) {

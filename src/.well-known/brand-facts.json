@@ -1,0 +1,35 @@
+{
+  "name": "OnRecord Title",
+  "url": "https://onrecordtitle.com",
+  "type": "LocalBusiness",
+  "industry": "Title Insurance & Escrow Services",
+  "founded": "2024",
+  "location": "Midvale, Utah",
+  "address": "1275 E Fort Union Boulevard, Suite 210, Midvale, Utah 84047",
+  "license": "Utah Insurance Department Agency License No. 976568",
+  "phone": "385-464-2060",
+  "email": "info@onrecordtitle.com",
+  "teamExperience": "36+ combined years",
+  "team": [
+    { "name": "Keli Ivie", "role": "Owner / Escrow Officer", "experience": "25+ years" },
+    { "name": "Ciara Sorenson", "role": "Escrow Officer", "experience": "11+ years" }
+  ],
+  "services": [
+    "Residential Title & Escrow",
+    "Commercial Title & Escrow",
+    "Mobile Closings",
+    "Refinance Closings",
+    "Title Insurance",
+    "Earnest Money Management",
+    "Seller Net Sheet Calculations"
+  ],
+  "differentiators": [
+    "2-Day Title Commitments",
+    "Mobile Closings Statewide",
+    "Volume Pricing for Professionals",
+    "Direct Access to Escrow Officers"
+  ],
+  "serviceArea": "Statewide Utah",
+  "targetClients": ["Realtors", "Loan Officers", "Builders", "Homebuyers", "Sellers"],
+  "paymentPortal": "CertifID Secure Payments"
+}
